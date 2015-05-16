@@ -20,4 +20,3 @@ curl -# -f -L https://raw.githubusercontent.com/CJTozer/env/master/linux/.tmux.c
 # Vim setup: vundle
 mkdir -p ~/.vim/bundle/
 git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-vim +PluginInstall +qall now
