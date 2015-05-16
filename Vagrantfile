@@ -20,4 +20,5 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   
   # .vimrc
   config.vm.provision "file", source: "files/.vimrc", destination: "~/.vimrc"
+  config.vm.provision "file", source: "files/git-completion.bash", destination: "~/git-completion.bash"
 end
