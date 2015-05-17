@@ -4,19 +4,29 @@ chmod +x rustup.sh
 ./rustup.sh -y # Takes a while - don't do every time!
 rm -f rustup.sh
 
+### Function for backing up a file
+function backup() {
+  if [ -f $1 ]; then
+    cp $1 $1.old
+  fi
+}
+
 ### Standard stuff (copying from GitHub mainly to keep it in one place)
 # .gitconfig
-cp ~/.gitconfig ~/.gitconfig_old
+if [ -f ~/git-completion.bash ]; then
+backup ~/.gitconfig
 curl -# -f -L https://raw.githubusercontent.com/CJTozer/env/master/common/.gitconfig -o ~/.gitconfig
 
 # .bashrc
-cp ~/.bashrc ~/.bashrc_old
+backup ~/.bashrc
 curl -# -f -L https://raw.githubusercontent.com/CJTozer/env/master/linux/.bashrc -o ~/.bashrc
 
 # .tmux.conf
-cp ~/.tmux.conf ~/.tmux.conf_old
+backup ~/.tmux.conf
 curl -# -f -L https://raw.githubusercontent.com/CJTozer/env/master/linux/.tmux.conf -o ~/.tmux.conf
 
 # Vim setup: vundle
-mkdir -p ~/.vim/bundle/
-git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+if [ ! -d ~/.vim/bundle/ ]; then 
+  mkdir -p ~/.vim/bundle/
+  git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+fi
