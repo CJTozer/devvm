@@ -15,3 +15,7 @@ Plugin 'scrooloose/syntastic' " Linting etc.
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
+
+" Highlight column 80, and 120+
+let &colorcolumn="80,".join(range(120,999),",")
+highlight ColorColumn ctermbg=235
