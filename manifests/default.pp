@@ -1,19 +1,7 @@
-package { "git":
-    ensure => "latest"
-}
+Package { ensure => "latest" }
 
-package { "tmux":
-    ensure => "latest"
-}
-
-package { "vim":
-    ensure => "latest"
-}
-
-package { "python-pip":
-    ensure => "latest"
-}
-
-package { "gcc":
-    ensure => "latest"
-}
+package { "git": }
+package { "tmux": }
+package { "vim": }
+package { "python-pip": }
+package { "gcc": }
