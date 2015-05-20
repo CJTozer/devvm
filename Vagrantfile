@@ -18,7 +18,6 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # Bootstrap - as 'vagrant' user, not root.  After puppet installs.
   config.vm.provision "shell", path: "vagrant.sh", privileged: false
   
-  # .vimrc
-  config.vm.provision "file", source: "files/.vimrc", destination: "~/.vimrc"
+  # Files to put in place
   config.vm.provision "file", source: "files/git-completion.bash", destination: "~/git-completion.bash"
 end

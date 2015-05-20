@@ -13,7 +13,6 @@ function backup() {
 
 ### Standard stuff (copying from GitHub mainly to keep it in one place)
 # .gitconfig
-if [ -f ~/git-completion.bash ]; then
 backup ~/.gitconfig
 curl -# -f -L https://raw.githubusercontent.com/CJTozer/env/master/common/.gitconfig -o ~/.gitconfig
 
@@ -21,9 +20,17 @@ curl -# -f -L https://raw.githubusercontent.com/CJTozer/env/master/common/.gitco
 backup ~/.bashrc
 curl -# -f -L https://raw.githubusercontent.com/CJTozer/env/master/linux/.bashrc -o ~/.bashrc
 
+# .vimrc
+backup ~/.vimrc
+curl -# -f -L https://raw.githubusercontent.com/CJTozer/env/master/common/.vimrc -o ~/.vimrc
+
 # .tmux.conf
 backup ~/.tmux.conf
 curl -# -f -L https://raw.githubusercontent.com/CJTozer/env/master/linux/.tmux.conf -o ~/.tmux.conf
+
+# .tmux.statusline.conf
+backup ~/.tmux.conf
+curl -# -f -L https://raw.githubusercontent.com/CJTozer/env/master/linux/.tmux.statusline.conf -o ~/.tmux.statusline.conf
 
 # Vim setup: vundle
 if [ ! -d ~/.vim/bundle/ ]; then 
