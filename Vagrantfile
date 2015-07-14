@@ -10,7 +10,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.hostname = "devvm"
   
   # Bootstrap - as root
-  config.vm.provision "shell", path: "root.sh"
+  config.vm.provision "shell", path: "root.sh", run: "always"
   
   # Puppet - always run, to keep up-to-date
   config.vm.provision "puppet", run: "always"
