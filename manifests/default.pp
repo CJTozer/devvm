@@ -5,4 +5,4 @@ package { "tmux": }
 package { "vim": }
 package { "python-pip": }
 package { "gcc": }
-package { "powerline-status": provider => "pip" }
+package { "powerline-status": provider => "pip", require: Package['python-pip'] }
