@@ -37,3 +37,6 @@ if [ ! -d ~/.vim/bundle/ ]; then
   mkdir -p ~/.vim/bundle/
   git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 fi
+
+# Git completion
+curl -# -f -L https://raw.githubusercontent.com/CJTozer/env/master/linux/git-completion.bash ~/git-completion.bash
